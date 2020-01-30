@@ -9,12 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var enterYards: UITextField!
+    @IBOutlet weak var enterMeters: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func clearClicked(_ sender: UIButton) {
+        enterYards.text = ""
+        enterMeters.text = ""
+    }
+    
+    @IBAction func calculateClicked(_ sender: UIButton) {
+        var temp: Double
+        if enterYards.hasText && !enterMeters.hasText {
+           temp = Double(enterYards.text!)!
+            print(temp)
+        }
+            
+    }
 }
 
