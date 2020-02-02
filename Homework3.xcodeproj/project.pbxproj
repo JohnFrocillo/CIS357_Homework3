@@ -15,6 +15,7 @@
 		C80348C723E3843E00FB7F02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C80348C523E3843E00FB7F02 /* LaunchScreen.storyboard */; };
 		C80348D223E3843E00FB7F02 /* Homework3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80348D123E3843E00FB7F02 /* Homework3Tests.swift */; };
 		C80348DD23E3843E00FB7F02 /* Homework3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80348DC23E3843E00FB7F02 /* Homework3UITests.swift */; };
+		C88B8CDC23E65EC200AC482D /* DecimalMinusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88B8CDB23E65EC200AC482D /* DecimalMinusTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C80348D823E3843E00FB7F02 /* Homework3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Homework3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C80348DC23E3843E00FB7F02 /* Homework3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework3UITests.swift; sourceTree = "<group>"; };
 		C80348DE23E3843E00FB7F02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C88B8CDB23E65EC200AC482D /* DecimalMinusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalMinusTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				C80348C323E3843E00FB7F02 /* Assets.xcassets */,
 				C80348C523E3843E00FB7F02 /* LaunchScreen.storyboard */,
 				C80348C823E3843E00FB7F02 /* Info.plist */,
+				C88B8CDB23E65EC200AC482D /* DecimalMinusTextField.swift */,
 			);
 			path = Homework3;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				C80348BF23E3843C00FB7F02 /* ViewController.swift in Sources */,
 				C80348BB23E3843C00FB7F02 /* AppDelegate.swift in Sources */,
+				C88B8CDC23E65EC200AC482D /* DecimalMinusTextField.swift in Sources */,
 				C80348BD23E3843C00FB7F02 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
