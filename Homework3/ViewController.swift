@@ -74,15 +74,24 @@ class ViewController: UIViewController, settingsViewControllerDelegate {
     }
     
     @IBAction func save(segue: UIStoryboardSegue) {
-        //do stuff
+        //Unwind back to here from 'Save' button
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "settingsSegue" {
+            let dest = segue.destination as! UINavigationController
+            let next = dest.viewControllers[0] as! SettingsViewController
+            next.delegate = self
+            next.fromUnitsSelection = self.fromUnit.text!
+            next.toUnitsSelection = self.toUnit.text!
+        }
+        
+        /*
+        if segue.identifier == "settingsSegue" {
             if let dest = segue.destination as? SettingsViewController {
                 dest.delegate = self
             }
-        }
+        }*/
     }
 }
 

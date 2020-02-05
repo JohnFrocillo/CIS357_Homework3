@@ -35,6 +35,9 @@ class SettingsViewController: UIViewController {
         self.picker.delegate = self
         self.picker.dataSource = self
         
+        self.fromUnits.text = self.fromUnitsSelection
+        self.toUnits.text = self.toUnitsSelection
+        
         let labelTap = UITapGestureRecognizer(target: self, action: #selector(self.fromLabelTapped(_:)))
         self.fromUnits.isUserInteractionEnabled = true
         self.fromUnits.addGestureRecognizer(labelTap)
