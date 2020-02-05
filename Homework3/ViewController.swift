@@ -8,7 +8,31 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, settingsViewControllerDelegate {
+    
+    @IBOutlet weak var fromUnit: UILabel!
+    @IBOutlet weak var toUnit: UILabel!
+    var mode: String = "length"
+    
+    func settingsChanged(fromUnits: LengthUnit, toUnits: LengthUnit) {
+        //update the main screen's labels
+        if(mode == "length") {
+            self.fromUnit.text = fromUnits.rawValue
+            self.toUnit.text = toUnits.rawValue
+        }
+        
+    }
+    
+    func settingsChanged(fromUnits: VolumeUnit, toUnits: VolumeUnit) {
+        //update the main screen's labels
+        if(mode == "volume") {
+            self.fromUnit.text = fromUnits.rawValue
+            self.toUnit.text = toUnits.rawValue
+        }
+    }
+    
+    
+    
     @IBOutlet weak var enterYards: UITextField!
     @IBOutlet weak var enterMeters: UITextField!
     
@@ -47,6 +71,18 @@ class ViewController: UIViewController {
             enterYards.text! = String(temp)
         }
             
+    }
+    
+    @IBAction func save(segue: UIStoryboardSegue) {
+        //do stuff
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "settingsSegue" {
+            if let dest = segue.destination as? SettingsViewController {
+                dest.delegate = self
+            }
+        }
     }
 }
 
