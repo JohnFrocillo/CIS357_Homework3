@@ -84,6 +84,9 @@ class ViewController: UIViewController, settingsViewControllerDelegate {
             next.delegate = self
             next.fromUnitsSelection = self.fromUnit.text!
             next.toUnitsSelection = self.toUnit.text!
+            
+            //pass the mode to the settings view
+            next.mode = self.mode
         }
         
         /*
@@ -93,6 +96,21 @@ class ViewController: UIViewController, settingsViewControllerDelegate {
             }
         }*/
     }
+
+    @IBAction func modeClicked(_ sender: UIButton) {
+        if self.mode == "length" {
+            self.mode = "volume"
+            self.fromUnit.text = "Gallons"
+            self.toUnit.text = "Liters"
+        }
+        else {
+            self.mode = "length"
+            self.fromUnit.text = "Yards"
+            self.toUnit.text = "Meters"
+        }
+        
+    }
+
 }
 
 extension ViewController: UITextFieldDelegate {

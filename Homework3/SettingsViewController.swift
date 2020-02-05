@@ -21,6 +21,7 @@ class SettingsViewController: UIViewController {
     var fromUnitsSelection: String = "Yards"
     var toUnitsSelection: String = "Meters"
     var delegate: settingsViewControllerDelegate?
+    var mode: String = "length"
     
     var toSelected: Bool = false
     var fromSelected: Bool = false
@@ -30,6 +31,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         self.pickerData = ["Yards", "Meters", "Miles"]
         self.picker.delegate = self
