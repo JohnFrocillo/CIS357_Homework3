@@ -10,10 +10,12 @@ import UIKit
 
 class ViewController: UIViewController, settingsViewControllerDelegate {
     
+    @IBOutlet weak var appTitle: UILabel!
     @IBOutlet weak var fromUnit: UILabel!
     @IBOutlet weak var toUnit: UILabel!
     var mode: String = "length"
     
+
     func settingsChanged(fromUnits: LengthUnit, toUnits: LengthUnit) {
         //update the main screen's labels
         if(mode == "length") {
@@ -45,6 +47,7 @@ class ViewController: UIViewController, settingsViewControllerDelegate {
         //make this controller the delegate of the text fields
         self.enterYards.delegate = self
         self.enterMeters.delegate = self
+        
     }
     
     @objc func dismissKeyboard() {
@@ -54,6 +57,14 @@ class ViewController: UIViewController, settingsViewControllerDelegate {
     @IBAction func clearClicked(_ sender: UIButton) {
         enterYards.text = ""
         enterMeters.text = ""
+        if mode == "length" {
+            enterYards.placeholder = "Enter Length"
+            enterMeters.placeholder = "Enter Length"
+        }
+        else {
+            enterYards.placeholder = "Enter Volume"
+            enterMeters.placeholder = "Enter Volume"
+        }
         dismissKeyboard()
     }
     
@@ -63,16 +74,23 @@ class ViewController: UIViewController, settingsViewControllerDelegate {
         var tUnit = ""
         var fUnit = ""
         
-        var newLabel: UITextField
+        var newLabel: UITextField = enterYards
         var fromVal = 0.0
-
-        if enterYards.text!.isEmpty {
+        var continueFlag = true
+        
+        if enterYards.text!.isEmpty && enterMeters.text!.isEmpty {
+            enterYards.placeholder = "Enter a valid number!"
+            enterMeters.placeholder = "Enter a valid number!"
+            continueFlag = false
+        }
+        
+        if enterYards.text!.isEmpty && continueFlag{
             fromVal = Double(enterMeters.text!)!
             newLabel = enterYards
             tUnit = fromUnit.text!
             fUnit = toUnit.text!
         }
-        else {
+        else if continueFlag{
             fromVal = Double(enterYards.text!)!
             newLabel = enterMeters
             tUnit = toUnit.text!
@@ -158,13 +176,17 @@ class ViewController: UIViewController, settingsViewControllerDelegate {
             }
             
         }
-
-        newLabel.text = String(toVal)
+        
+        if(continueFlag) {
+            newLabel.text = String(toVal)
+        }
         
     }
     
     @IBAction func save(segue: UIStoryboardSegue) {
         //Unwind back to here from 'Save' button
+        enterYards.text = ""
+        enterMeters.text = ""
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -186,12 +208,21 @@ class ViewController: UIViewController, settingsViewControllerDelegate {
             self.mode = "volume"
             self.fromUnit.text = "Gallons"
             self.toUnit.text = "Liters"
+            self.appTitle.text = "Volume Conversion Calculator"
+            enterYards.placeholder = "Enter Volume"
+            enterMeters.placeholder = "Enter Volume"
         }
         else {
             self.mode = "length"
             self.fromUnit.text = "Yards"
             self.toUnit.text = "Meters"
+            self.appTitle.text = "Length Conversion Calculator"
+            enterYards.placeholder = "Enter Length"
+            enterMeters.placeholder = "Enter Length"
         }
+        
+        enterYards.text = ""
+        enterMeters.text = ""
     }
 }
 
