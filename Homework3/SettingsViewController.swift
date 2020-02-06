@@ -25,6 +25,7 @@ class SettingsViewController: UIViewController {
     
     var toSelected: Bool = false
     var fromSelected: Bool = false
+    var cancelPressed = false
     
     @IBOutlet weak var fromUnits: UILabel!
     @IBOutlet weak var toUnits: UILabel!
@@ -32,8 +33,13 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        self.pickerData = ["Yards", "Meters", "Miles"]
+        if mode == "length" {
+            self.pickerData = ["Yards", "Meters", "Miles"]
+        }
+        else {
+            self.pickerData = ["Liters", "Gallons", "Quarts"]
+        }
+
         self.picker.delegate = self
         self.picker.dataSource = self
         
@@ -73,11 +79,22 @@ class SettingsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if let d = self.delegate {
-            d.settingsChanged(fromUnits: LengthUnit(rawValue: fromUnitsSelection)!, toUnits: LengthUnit(rawValue: toUnitsSelection)!)
+            
+            if(!cancelPressed) {
+                if mode == "length" {
+                    d.settingsChanged(fromUnits: LengthUnit(rawValue: fromUnitsSelection)!, toUnits: LengthUnit(rawValue: toUnitsSelection)!)
+                }
+                else {
+                    d.settingsChanged(fromUnits: VolumeUnit(rawValue: fromUnitsSelection)!, toUnits: VolumeUnit(rawValue: toUnitsSelection)!)
+                }
+            }
+
         }
+        cancelPressed = false
     }
     
     @IBAction func cancelButtonPressed(sender: UIBarButtonItem) {
+        cancelPressed = true
         self.dismiss(animated: true, completion: nil)
     }
     

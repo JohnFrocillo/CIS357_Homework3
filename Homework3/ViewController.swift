@@ -59,18 +59,108 @@ class ViewController: UIViewController, settingsViewControllerDelegate {
     
     @IBAction func calculateClicked(_ sender: UIButton) {
         dismissKeyboard()
-        var temp: Double
-        if enterYards.hasText && !enterMeters.hasText {
-            temp = Double(enterYards.text!)!
-            temp = temp * 0.9144
-            enterMeters.text! = String(temp)
+        
+        var tUnit = ""
+        var fUnit = ""
+        
+        var newLabel: UITextField
+        var fromVal = 0.0
+
+        if enterYards.text!.isEmpty {
+            fromVal = Double(enterMeters.text!)!
+            newLabel = enterYards
+            tUnit = fromUnit.text!
+            fUnit = toUnit.text!
         }
-        else if !enterYards.hasText && enterMeters.hasText {
-            temp = Double(enterMeters.text!)!
-            temp = temp * 1.09361
-            enterYards.text! = String(temp)
+        else {
+            fromVal = Double(enterYards.text!)!
+            newLabel = enterMeters
+            tUnit = toUnit.text!
+            fUnit = fromUnit.text!
         }
+        
+        var toVal = 0.0
+        
+        if mode == "length" {
+            if tUnit == "Meters" && fUnit == "Meters" {
+                let convKey =  LengthConversionKey(toUnits: .Meters, fromUnits: .Meters)
+                toVal = fromVal * lengthConversionTable[convKey]!
+            }
+            else if tUnit == "Meters" && fUnit == "Yards" {
+                let convKey = LengthConversionKey(toUnits: .Meters, fromUnits: .Yards)
+                toVal = fromVal * lengthConversionTable[convKey]!
+            }
+            else if tUnit == "Meters" && fUnit == "Miles" {
+                let convKey = LengthConversionKey(toUnits: .Meters, fromUnits: .Miles)
+                toVal = fromVal * lengthConversionTable[convKey]!
+            }
+            else if tUnit == "Yards" && fUnit == "Meters" {
+                let convKey = LengthConversionKey(toUnits: .Yards, fromUnits: .Meters)
+                toVal = fromVal * lengthConversionTable[convKey]!
+            }
+            else if tUnit == "Yards" && fUnit == "Yards" {
+                let convKey = LengthConversionKey(toUnits: .Yards, fromUnits: .Yards)
+                toVal = fromVal * lengthConversionTable[convKey]!
+            }
+            else if tUnit == "Yards" && fUnit == "Miles" {
+                let convKey = LengthConversionKey(toUnits: .Yards, fromUnits: .Miles)
+                toVal = fromVal * lengthConversionTable[convKey]!
+            }
+            else if tUnit == "Miles" && fUnit == "Meters" {
+                let convKey = LengthConversionKey(toUnits: .Miles, fromUnits: .Meters)
+                toVal = fromVal * lengthConversionTable[convKey]!
+            }
+            else if tUnit == "Miles" && fUnit == "Yards" {
+                let convKey = LengthConversionKey(toUnits: .Miles, fromUnits: .Yards)
+                toVal = fromVal * lengthConversionTable[convKey]!
+            }
+            else if tUnit == "Miles" && fUnit == "Miles" {
+                let convKey = LengthConversionKey(toUnits: .Miles, fromUnits: .Miles)
+                toVal = fromVal * lengthConversionTable[convKey]!
+            }
+        }
+        else {
+            if tUnit == "Liters" && fUnit == "Liters" {
+                let convKey =  VolumeConversionKey(toUnits: .Liters, fromUnits: .Liters)
+                toVal = fromVal * volumeConversionTable[convKey]!
+            }
+            else if tUnit == "Liters" && fUnit == "Gallons" {
+                let convKey = VolumeConversionKey(toUnits: .Liters, fromUnits: .Gallons)
+                toVal = fromVal * volumeConversionTable[convKey]!
+            }
+            else if tUnit == "Liters" && fUnit == "Quarts" {
+                let convKey = VolumeConversionKey(toUnits: .Liters, fromUnits: .Quarts)
+                toVal = fromVal * volumeConversionTable[convKey]!
+            }
+            else if tUnit == "Gallons" && fUnit == "Liters" {
+                let convKey = VolumeConversionKey(toUnits: .Gallons, fromUnits: .Liters)
+                toVal = fromVal * volumeConversionTable[convKey]!
+            }
+            else if tUnit == "Gallons" && fUnit == "Gallons" {
+                let convKey = VolumeConversionKey(toUnits: .Gallons, fromUnits: .Gallons)
+                toVal = fromVal * volumeConversionTable[convKey]!
+            }
+            else if tUnit == "Gallons" && fUnit == "Quarts" {
+                let convKey = VolumeConversionKey(toUnits: .Gallons, fromUnits: .Quarts)
+                toVal = fromVal * volumeConversionTable[convKey]!
+            }
+            else if tUnit == "Quarts" && fUnit == "Liters" {
+                let convKey = VolumeConversionKey(toUnits: .Quarts, fromUnits: .Liters)
+                toVal = fromVal * volumeConversionTable[convKey]!
+            }
+            else if tUnit == "Quarts" && fUnit == "Gallons" {
+                let convKey = VolumeConversionKey(toUnits: .Quarts, fromUnits: .Gallons)
+                toVal = fromVal * volumeConversionTable[convKey]!
+            }
+            else if tUnit == "Quarts" && fUnit == "Quarts" {
+                let convKey = VolumeConversionKey(toUnits: .Quarts, fromUnits: .Quarts)
+                toVal = fromVal * volumeConversionTable[convKey]!
+            }
             
+        }
+
+        newLabel.text = String(toVal)
+        
     }
     
     @IBAction func save(segue: UIStoryboardSegue) {
@@ -89,12 +179,6 @@ class ViewController: UIViewController, settingsViewControllerDelegate {
             next.mode = self.mode
         }
         
-        /*
-        if segue.identifier == "settingsSegue" {
-            if let dest = segue.destination as? SettingsViewController {
-                dest.delegate = self
-            }
-        }*/
     }
 
     @IBAction func modeClicked(_ sender: UIButton) {
@@ -108,9 +192,7 @@ class ViewController: UIViewController, settingsViewControllerDelegate {
             self.fromUnit.text = "Yards"
             self.toUnit.text = "Meters"
         }
-        
     }
-
 }
 
 extension ViewController: UITextFieldDelegate {
