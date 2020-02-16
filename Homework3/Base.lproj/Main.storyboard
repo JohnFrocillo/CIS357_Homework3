@@ -16,35 +16,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWS-mO-ejR" customClass="ConversionCalcButton" customModule="Homework3" customModuleProvider="target">
-                                <rect key="frame" x="8" y="258" width="103.66666666666667" height="30"/>
+                                <rect key="frame" x="8" y="262" width="103.66666666666667" height="30"/>
                                 <state key="normal" title="Calculate"/>
                                 <connections>
                                     <action selector="calculateClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="63M-zx-p6N"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aib-J6-8KM" customClass="ConversionCalcButton" customModule="Homework3" customModuleProvider="target">
-                                <rect key="frame" x="155.33333333333334" y="258" width="103.33333333333334" height="30"/>
+                                <rect key="frame" x="155.33333333333334" y="262" width="103.33333333333334" height="30"/>
                                 <state key="normal" title="Clear"/>
                                 <connections>
                                     <action selector="clearClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tFW-DD-zh6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmh-Oi-h9T" customClass="ConversionCalcButton" customModule="Homework3" customModuleProvider="target">
-                                <rect key="frame" x="302.66666666666669" y="258" width="103.33333333333331" height="30"/>
+                                <rect key="frame" x="302.66666666666669" y="262" width="103.33333333333331" height="30"/>
                                 <state key="normal" title="Mode"/>
                                 <connections>
                                     <action selector="modeClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aIT-W7-Bpp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oC-O6-fx3" customClass="ConversionCalcButton" customModule="Homework3" customModuleProvider="target">
-                                <rect key="frame" x="155.33333333333334" y="840" width="103.33333333333334" height="30"/>
+                                <rect key="frame" x="155.33333333333334" y="833" width="103.33333333333334" height="30"/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
                                     <segue destination="87v-ly-Ref" kind="show" identifier="settingsSegue" id="KGk-OP-INH"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="1y9-i9-CbY">
-                                <rect key="frame" x="8" y="52" width="398" height="198"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1y9-i9-CbY">
+                                <rect key="frame" x="8" y="52" width="398" height="202"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Length Conversion Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5KV-er-cwz" customClass="ConversionCalcLabel" customModule="Homework3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="34"/>
@@ -53,13 +53,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBQ-58-VIP" customClass="ConversionCalcLabel" customModule="Homework3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="41" width="398" height="34"/>
+                                        <rect key="frame" x="0.0" y="42" width="398" height="34"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bDj-WO-Fz5">
-                                        <rect key="frame" x="0.0" y="82" width="398" height="34"/>
+                                        <rect key="frame" x="0.0" y="84" width="398" height="34"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Length in Yards" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1If-7W-aJN" customClass="ConversionCalcTextField" customModule="Homework3" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="195" height="34"/>
@@ -75,13 +75,13 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbc-Ct-PzV" customClass="ConversionCalcLabel" customModule="Homework3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="123" width="398" height="34"/>
+                                        <rect key="frame" x="0.0" y="126" width="398" height="34"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9Pi-72-4zN">
-                                        <rect key="frame" x="0.0" y="164" width="398" height="34"/>
+                                        <rect key="frame" x="0.0" y="168" width="398" height="34"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Length in Meters" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Rw-uk-cBJ" customClass="ConversionCalcTextField" customModule="Homework3" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="195" height="34"/>
@@ -116,7 +116,7 @@
                             <constraint firstItem="bWS-mO-ejR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:4" id="sbN-pC-5jB"/>
                             <constraint firstItem="2oC-O6-fx3" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:4" id="tpL-hP-HY5"/>
                             <constraint firstItem="zmh-Oi-h9T" firstAttribute="top" secondItem="1y9-i9-CbY" secondAttribute="bottom" constant="8" id="u41-hA-TMD"/>
-                            <constraint firstItem="2oC-O6-fx3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="8" id="y7H-6z-hpa"/>
+                            <constraint firstItem="2oC-O6-fx3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="1" id="y7H-6z-hpa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -143,34 +143,34 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZvS-MZ-F17">
                                 <rect key="frame" x="8" y="64" width="398" height="48.666666666666657"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="198" translatesAutoresizingMaskIntoConstraints="NO" id="iCa-ET-HZ0">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iCa-ET-HZ0">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="20.333333333333332"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From Units:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxd-pF-CnL">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="195" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yards" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzf-4P-NVw">
-                                                <rect key="frame" x="298" y="0.0" width="100" height="20.333333333333332"/>
+                                                <rect key="frame" x="203" y="0.0" width="195" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="221" translatesAutoresizingMaskIntoConstraints="NO" id="gN8-Tn-zN5">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gN8-Tn-zN5">
                                         <rect key="frame" x="0.0" y="28.333333333333329" width="398" height="20.333333333333329"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Units:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sS-gT-UtN">
-                                                <rect key="frame" x="0.0" y="0.0" width="88.666666666666671" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="195" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meters" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLr-C5-t9M">
-                                                <rect key="frame" x="309.66666666666669" y="0.0" width="88.333333333333314" height="20.333333333333332"/>
+                                                <rect key="frame" x="203" y="0.0" width="195" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
